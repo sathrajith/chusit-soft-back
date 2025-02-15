@@ -8,6 +8,7 @@ import com.example.sft.service.ServiceProviderService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ServiceProviderServiceImpl implements ServiceProviderService {
@@ -27,4 +28,12 @@ public class ServiceProviderServiceImpl implements ServiceProviderService {
     public List<ServiceProvider> getAllServiceProviders() {
         return serviceProviderRepository.findAll();
     }
+
+    @Override
+    public List<String> getAllServiceProviderEmails() {
+        return serviceProviderRepository.findAll().stream()
+                .map(ServiceProvider::getEmail)
+                .collect(Collectors.toList());
+    }
+
 }

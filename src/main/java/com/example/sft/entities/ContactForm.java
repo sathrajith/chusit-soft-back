@@ -34,7 +34,7 @@ public class ContactForm {
         this.id=id;
     }
 
-    public String geName(){
+    public String getName(){
         return name;
     }
     public void setName(String name){

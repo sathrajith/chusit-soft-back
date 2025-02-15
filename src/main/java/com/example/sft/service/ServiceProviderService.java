@@ -9,4 +9,6 @@ import java.util.List;
 public interface ServiceProviderService {
     ServiceProvider registerServiceProvider(ServiceProvider serviceProvider);
     List<ServiceProvider> getAllServiceProviders();
+    List<String> getAllServiceProviderEmails();
+
 }
